@@ -61,11 +61,12 @@ addons:
        - g++-4.8
        - gfortran-4.8
 install:
+  # none
+script:
   - cd $TRAVIS_BUILD_DIR
   # build deps using uberenv
   - python scripts/uberenv/uberenv.py --spec %gcc+mpich
-script:
-  - cd $TRAVIS_BUILD_DIR
+  - cat  /tmp/travis/spack-stage/spack-stage-*/tbb*/spack-build.out
   # create out-of-source build dir
   - mkdir travis-debug-build
   - cd    travis-debug-build
