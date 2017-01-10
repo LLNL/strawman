@@ -63,15 +63,13 @@ addons:
        - gcc-4.8
        - g++-4.8
        - gfortran-4.8
-before_install:
-  # nothing
 install:
-  # nothing
-script:
   - cd $TRAVIS_BUILD_DIR
   # build deps using uberenv
-  - cd python scripts/uberenv/uberenv.py --spec %gcc+mpich
-  # create out-of-source build dir, and an install dir
+  - python scripts/uberenv/uberenv.py --spec %gcc+mpich
+script:
+  - cd $TRAVIS_BUILD_DIR
+  # create out-of-source build dir and install dir
   - mkdir travis-debug-build
   - mkdir travis-debug-install
   - cd    travis-debug-build
