@@ -48,9 +48,6 @@ language: cpp
 compiler:
   - gcc
 env:
-  global:
-    # we need to know the root dir for our 3rd party lib installs
-    - TRAVIS_HOME=`pwd`
   matrix:
     # we want to test both static and shared
     - BUILD_SHARED_LIBS=ON
@@ -69,9 +66,8 @@ install:
   - python scripts/uberenv/uberenv.py --spec %gcc+mpich
 script:
   - cd $TRAVIS_BUILD_DIR
-  # create out-of-source build dir and install dir
+  # create out-of-source build dir
   - mkdir travis-debug-build
-  - mkdir travis-debug-install
   - cd    travis-debug-build
   # cmake options
   # build type
@@ -81,14 +77,17 @@ script:
   # install path
   - CMAKE_OPTS="${CMAKE_OPTS} -DCMAKE_INSTALL_PREFIX=../travis-debug-install"
   # make sure cmake is in our path
-  - export PATH=${TRAVIS_HOME}/uberenv_libs/spack/opt/spack/*/*/cmake*/bin/:$PATH
+  - export PATH=${TRAVIS_BUILD_DIR}/uberenv_libs/spack/opt/spack/*/*/cmake*/bin/:$PATH
+  - echo $PATH
+  - which cmake
+  - cmake --version
   - cmake  ${CMAKE_OPTS} ../src
   # build, test, and install
   - make
   - env CTEST_OUTPUT_ON_FAILURE=1 make test
   - make install
   # test our examples that demo using an installed strawman
-  - export CONDUIT_DIR=${TRAVIS_HOME}/uberenv_libs/spack/opt/spack/*/*/conduit*/
+  - export CONDUIT_DIR=${TRAVIS_BUILD_DIR}/uberenv_libs/spack/opt/spack/*/*/conduit*/
   - export STRAWMAN_DIR=${TRAVIS_BUILD_DIR}/travis-debug-install
   # using with cmake example
   - cd ${TRAVIS_BUILD_DIR}/src/examples/using-with-cmake
@@ -102,6 +101,9 @@ script:
   - make
   - env LD_LIBRARY_PATH=${STRAWMAN_DIR}/lib/:${CONDUIT_DIR}/lib/ ./example
 
+cache:
+  directories:
+    - ${TRAVIS_BUILD_DIR}/uberenv_libs
 notifications:
   email:
     recipients:
