@@ -57,12 +57,17 @@ addons:
     sources:
     - ubuntu-toolchain-r-test
     packages:
+       - binutils-2.27
        - gcc-4.8
        - g++-4.8
        - gfortran-4.8
 install:
   # none
 script:
+  - which g++
+  - g++ --version
+  - export CC=gcc-4.8
+  - export CXX=g++-4.8
   - cd $TRAVIS_BUILD_DIR
   # build deps using uberenv
   - python scripts/uberenv/uberenv.py --spec %gcc+mpich
