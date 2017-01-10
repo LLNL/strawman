@@ -77,7 +77,7 @@ script:
   # install path
   - CMAKE_OPTS="${CMAKE_OPTS} -DCMAKE_INSTALL_PREFIX=../travis-debug-install"
   # make sure cmake is in our path
-  - export CMAKE_BIN_DIR=`ls ${TRAVIS_BUILD_DIR}/uberenv_libs/spack/opt/spack/*/*/cmake*/bin/`
+  - export CMAKE_BIN_DIR=`ls ${TRAVIS_BUILD_DIR}/uberenv_libs/spack/opt/spack/*/*/cmake*/bin`
   - export PATH=${CMAKE_BIN_DIR}:$PATH
   - echo $PATH
   - which cmake
@@ -88,7 +88,7 @@ script:
   - env CTEST_OUTPUT_ON_FAILURE=1 make test
   - make install
   # test our examples that demo using an installed strawman
-  - export CONDUIT_DIR=`ls ${TRAVIS_BUILD_DIR}/uberenv_libs/spack/opt/spack/*/*/conduit*/`
+  - export CONDUIT_DIR=`ls ${TRAVIS_BUILD_DIR}/uberenv_libs/spack/opt/spack/*/*/conduit*`
   - export STRAWMAN_DIR=${TRAVIS_BUILD_DIR}/travis-debug-install
   # using with cmake example
   - cd ${TRAVIS_BUILD_DIR}/src/examples/using-with-cmake
