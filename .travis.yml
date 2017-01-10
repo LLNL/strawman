@@ -82,7 +82,8 @@ script:
   - echo $PATH
   - which cmake
   - cmake --version
-  - cmake  ${CMAKE_OPTS} -C ../uberenv_libs/*.cmake ../src
+  - export HOST_CONFIG=`ls ../uberenv_libs/*.cmake`
+  - cmake ${CMAKE_OPTS} -C ${HOST_CONFIG} ../src
   # build, test, and install
   - make
   - env CTEST_OUTPUT_ON_FAILURE=1 make test
