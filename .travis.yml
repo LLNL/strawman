@@ -82,7 +82,7 @@ script:
   - echo $PATH
   - which cmake
   - cmake --version
-  - cmake  ${CMAKE_OPTS} ../src
+  - cmake  ${CMAKE_OPTS} -C ../uberenv_libs/*.cmake ../src
   # build, test, and install
   - make
   - env CTEST_OUTPUT_ON_FAILURE=1 make test
