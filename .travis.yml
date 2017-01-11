@@ -77,7 +77,6 @@ script:
   - cd $TRAVIS_BUILD_DIR
   # build deps using uberenv
   - python scripts/uberenv/uberenv.py --spec %gcc@5+mpich
-  - cat  /tmp/travis/spack-stage/spack-stage-*/tbb*/spack-build.out
   # create out-of-source build dir
   - mkdir travis-debug-build
   - cd    travis-debug-build
