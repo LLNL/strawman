@@ -65,6 +65,7 @@ addons:
        - gcc-5
        - g++-5
        - gfortran-5
+       - nvidia-cuda-toolkit
 install:
   # none
 script:
