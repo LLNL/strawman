@@ -109,10 +109,10 @@ script:
   - cmake -DSTRAWMAN_DIR=${STRAWMAN_DIR} -DCONDUIT_DIR=${CONDUIT_DIR} ../
   - make
   - ./example
-  # using with make example
-  - cd ${TRAVIS_BUILD_DIR}/src/examples/using-with-make
-  - make
-  - env LD_LIBRARY_PATH=${STRAWMAN_DIR}/lib/:${CONDUIT_DIR}/lib/ ./example
+  # using with make example (still needs work for static builds)
+  #- cd ${TRAVIS_BUILD_DIR}/src/examples/using-with-make
+  #- make
+  #- env LD_LIBRARY_PATH=${STRAWMAN_DIR}/lib/:${CONDUIT_DIR}/lib/ ./example
 
 #cache:
 #  directories:
