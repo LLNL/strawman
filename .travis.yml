@@ -115,9 +115,9 @@ script:
   - make
   - env LD_LIBRARY_PATH=${STRAWMAN_DIR}/lib/:${CONDUIT_DIR}/lib/ ./example
 
-cache:
-  directories:
-    - ${TRAVIS_BUILD_DIR}/uberenv_libs
+#cache:
+#  directories:
+#    - ${TRAVIS_BUILD_DIR}/uberenv_libs
 notifications:
   email:
     recipients:
