@@ -2,7 +2,9 @@
 Strawman
 ===========
 
-Strawman is an open source many-core capable lightweight in situ visualization and analysis infrastructure for multi-physics HPC simulations.
+Strawman is an open source many-core capable lightweight in situ visualization and analysis infrastructure for multi-physics HPC simulations. Currently, Strawman has evolved into Ascent and that repository can be found on github:
+
+https://github.com/Alpine-DAV/ascent
 
 Documentation
 =================
