@@ -163,7 +163,7 @@ If specific action exists in both the Conduit Node and the file, shared fields w
 If additional actions are present in the file, they will be appended to the current list of actions.
 The behavior is identical to a Python dictionary update.</p>
 <p>For example, if the existing actions in the Conduit Node contain:</p>
-<div class="highlight-json"><div class="highlight"><pre><span class="p">[</span>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">[</span>
   <span class="p">{</span>
    <span class="nt">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;add_plot&quot;</span><span class="p">,</span>
    <span class="nt">&quot;field_name&quot;</span>  <span class="p">:</span> <span class="s2">&quot;p&quot;</span><span class="p">,</span>
@@ -180,7 +180,7 @@ The behavior is identical to a Python dictionary update.</p>
 </pre></div>
 </div>
 <p>The contents of the file are:</p>
-<div class="highlight-json"><div class="highlight"><pre><span class="p">[</span>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">[</span>
   <span class="p">{</span>
     <span class="nt">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;add_plot&quot;</span><span class="p">,</span>
     <span class="nt">&quot;field_name&quot;</span>  <span class="p">:</span> <span class="s2">&quot;new_var&quot;</span>
@@ -196,7 +196,7 @@ The behavior is identical to a Python dictionary update.</p>
 </pre></div>
 </div>
 <p>The resulting actions that are executed by Strawman will be:</p>
-<div class="highlight-json"><div class="highlight"><pre><span class="p">[</span>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">[</span>
   <span class="p">{</span>
    <span class="nt">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;add_plot&quot;</span><span class="p">,</span>
    <span class="nt">&quot;field_name&quot;</span> <span class="p">:</span> <span class="s2">&quot;new_var&quot;</span>

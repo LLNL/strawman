@@ -154,7 +154,7 @@
   <div class="section" id="add-plot">
 <span id="add-plot-label"></span><h1>add_plot<a class="headerlink" href="#add-plot" title="Permalink to this headline">¶</a></h1>
 <p>The only required entry is the name of mesh field to plot.</p>
-<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
  <span class="nt">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;add_plot&quot;</span><span class="p">,</span>
 <span class="hll"> <span class="nt">&quot;field_name&quot;</span>    <span class="p">:</span> <span class="s2">&quot;p&quot;</span>
 </span><span class="p">}</span>
@@ -183,7 +183,7 @@ Color map names are the same for both EAVL and VTK-m. A full list of names can b
 Colors are three double precision values between 0 and 1.
 Alphas and positions  are a single double precision values between 0 and 1.</p>
 <p>Here is an example of the color map node that define three RGB control points and two alpha control points that defines a custom color map for volume rendering:</p>
-<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;color_map&quot;</span><span class="p">:</span>
   <span class="p">{</span>
      <span class="nt">&quot;control_points&quot;</span><span class="p">:</span>
@@ -223,7 +223,7 @@ Alphas and positions  are a single double precision values between 0 and 1.</p>
 </pre></div>
 </div>
 <p>The equivalent c++ code is:</p>
-<div class="highlight-c++"><div class="highlight"><pre><span class="n">add_plot</span><span class="p">[</span><span class="s">&quot;action&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;add_plot&quot;</span><span class="p">;</span>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="n">add_plot</span><span class="p">[</span><span class="s">&quot;action&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;add_plot&quot;</span><span class="p">;</span>
 <span class="n">add_plot</span><span class="p">[</span><span class="s">&quot;field_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;p&quot;</span><span class="p">;</span>
 <span class="n">add_plot</span><span class="p">[</span><span class="s">&quot;render_options/file_name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">outFileName</span><span class="p">;</span>
 <span class="n">add_plot</span><span class="p">[</span><span class="s">&quot;render_options/renderer&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;volume&quot;</span><span class="p">;</span>
@@ -266,7 +266,7 @@ Alphas and positions  are a single double precision values between 0 and 1.</p>
 <p>It is also possible to combine existing color maps defined by name and combine it with custom alpha control points.
 In the example below, we specify a thermal color map and add two alpha control points.
 The opacity is linearly interpolated from 0 (fully transparent) to 1 (fully opaque) across the the color map.</p>
-<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;color_map&quot;</span><span class="p">:</span>
   <span class="p">{</span>
      <span class="nt">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;thermal&quot;</span><span class="p">,</span>
@@ -306,7 +306,7 @@ The opacity is linearly interpolated from 0 (fully transparent) to 1 (fully opaq
 </ul>
 <p>Strawman always creates default parameters camera based on the spatial extents of the data set, and all or a few of the camera parameters can be modified.
 Like all the other action parameters, each can be specified in the actions json file or can be specified programmatically:</p>
-<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;camera&quot;</span><span class="p">:</span>
   <span class="p">{</span>
     <span class="nt">&quot;position&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">],</span>
@@ -316,7 +316,7 @@ Like all the other action parameters, each can be specified in the actions json 
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-c++"><div class="highlight"><pre><span class="c1">// Create the camera node</span>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="c1">// Create the camera node</span>
 <span class="n">conduit</span><span class="o">::</span><span class="n">Node</span> <span class="n">camera</span><span class="p">;</span>
 <span class="c1">// Set the camera position</span>
 <span class="kt">double</span> <span class="n">position</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">};</span>

@@ -192,7 +192,7 @@ Lulesh takes several command line arguments, but the most useful are:</p>
 <p class="last">When running lulesh in parallel, the number of MPI processes must be a perfect cube. For example, some valid numbers of MPI tasks would be 1, 2, 8, and 27.</p>
 </div>
 <p>The command below would launch Lulesh for 10 iterations with a problem size of 32^3 zones per node (8*32^3 = 262,144 total zones):</p>
-<div class="highlight-bash"><div class="highlight"><pre>srun -n <span class="m">8</span> lulesh_par -i <span class="m">10</span> -s 32
+<div class="highlight-bash"><div class="highlight"><pre><span></span>srun -n <span class="m">8</span> lulesh_par -i <span class="m">10</span> -s 32
 </pre></div>
 </div>
 </div>
@@ -207,7 +207,7 @@ CloverLeaf3D uses ghost zones, thus they have to be stripped each time step befo
 <h3>Running CloverLeaf3D<a class="headerlink" href="#running-cloverleaf3d" title="Permalink to this headline">¶</a></h3>
 <p>Unlike the other two example integrations, CloverLeaf3D uses an input deck to describe the problem setup.
 There are a number of example problems in the CloverLeaf3D source directory, and one (<cite>clover.in</cite>) is copied into the build directory.</p>
-<div class="highlight-text"><div class="highlight"><pre>*clover
+<div class="highlight-text"><div class="highlight"><pre><span></span>*clover
 state 1 density=0.2 energy=1.0
 state 2 density=1.0 energy=2.5 geometry=cuboid xmin=0.0 xmax=5.0 ymin=0.0 ymax=2.0 zmin=0.0 zmax=2.0
 x_cells=10
@@ -252,7 +252,7 @@ Mesh data extraction can be found starting at line 20, and the API calls can be 
 <div class="section" id="running-kripke">
 <h3>Running Kripke<a class="headerlink" href="#running-kripke" title="Permalink to this headline">¶</a></h3>
 <p>Kripke take many command line parameters, and there is an example script that is copied into the directory where Kripke is built.</p>
-<div class="highlight-bash"><div class="highlight"><pre>srun -n <span class="m">8</span> kripke_par --procs 2,2,2 --zones 32,32,32 --niter <span class="m">5</span> --dir 1:2 --grp 1:1 --legendre <span class="m">4</span> --quad 4:4
+<div class="highlight-bash"><div class="highlight"><pre><span></span>srun -n <span class="m">8</span> kripke_par --procs 2,2,2 --zones 32,32,32 --niter <span class="m">5</span> --dir 1:2 --grp 1:1 --legendre <span class="m">4</span> --quad 4:4
 </pre></div>
 </div>
 <p>The parameters that control the problem size and layout are:</p>
