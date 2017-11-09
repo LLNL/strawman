@@ -47,7 +47,16 @@
 Strawman
 ========
 
+
 A many-core capable lightweight in situ visualization and analysis infrastructure for multi-physics HPC simulations.
+
+.. important::
+
+    Strawman is no longer being actively developed. ALPINE Ascent https://alpine-dav.github.io/ascent/ is an evolution 
+    of and a successor to Strawman.
+ 
+
+
 
 Introduction
 ============
